@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  alpine:
+    image: alpine:latest
+    command: sh -c 'sh /tmp/install.sh && tail -f /dev/null'
+    volumes:
+      - ../install.sh:/tmp/install.sh 
+  ubuntu:
+    image: ubuntu:latest
+    command: sh -c 'bash /tmp/install.sh && tail -f /dev/null'
+    volumes:
+      - ../install.sh:/tmp/install.sh 
+  centos:
+    image: centos:latest
+    command: sh -c 'bash /tmp/install.sh && tail -f /dev/null'
+    volumes:
+      - ../install.sh:/tmp/install.sh 
